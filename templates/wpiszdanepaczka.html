@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wyślij paczkę</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-container {
+      margin-bottom: 20px;
+    }
+
+    .input-container label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .input-container input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-container input:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    button[type="submit"] {
+      padding: 12px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Send package</h2>
+  <form action="/web/sendpackage" method="POST">
+    <div class="input-container">
+      <label for="odbiorca_email">Enter recipient's email:</label>
+      <input type="email" id="odbiorca_email" name="odbiorca_email" required>
+    </div>
+    <div class="input-container">
+      <label for="nadawca_email">Enter sender's email:</label>
+      <input type="email" id="nadawca_email" name="nadawca_email" required>
+    </div>
+    <div class="input-container">
+      <label for="paczkomat_id">Enter parcel locker's ID:</label>
+      <input type="text" id="paczkomat_id" name="paczkomat_id" required>
+    </div>
+    <div class="input-container">
+      <label for="rozmiar">Enter size:</label>
+      <input type="text" id="rozmiar" name="rozmiar" required>
+    </div>
+    <div class="input-container">
+      <label for="waga">Enter weight:</label>
+      <input type="text" id="waga" name="waga" required>
+    </div>
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+</body>
+</html>
