@@ -1,0 +1,28 @@
+<html>
+    <head>
+    <!--css-->
+        <link rel = "stylesheet" type="text/css" href="/css/main.css" media= "screen, projection">
+
+        {% if title %}
+        <title>{{ title }} - uzytkownik</title>
+        {% endif %}
+    </head>
+    <body>
+
+        <div> BAZA DANYCH</div>
+
+        <table>
+            <tbody>
+                <tr><p><th>Id</th> <th><b>Imie i nazwisko</b></th> <th><b>email</b></th> <th><b>adres uzytkownika</b></th></p></tr>
+                {% for user in uzytkownik %}
+                <tr>
+                    <p><th>{{user.id}}</th><td><b>{{user.imie_i_nazwisko}}</b></td><td>{{user.email}}</td><td>{{user.adres_uzytkownika}}</td></p>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+    </body>
+</html>
